@@ -1,0 +1,7 @@
+{
+  "name": "test-mod",
+  "private": true,
+  "publisher": "xmodular",
+  "type": "module",
+  "version": "1.0.0"
+}
