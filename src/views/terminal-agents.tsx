@@ -118,14 +118,14 @@ export function TerminalAgentsView() {
     >
       <header style={{ display: 'grid', gap: 4 }}>
         <Text as="small" font="overline" color="tertiary">
-          TEST MOD · TASK RUNNER
+          UPDATED FROM GIT · REVISION 2
         </Text>
         <Text as="h2" font="h3" weight="semibold">
-          Test Task Runner
+          Task Runner (updated)
         </Text>
         <Text as="p" color="secondary">
-          Give Codex a task, run one shell check, and return failures to the
-          same session.
+          This header text changed in the second commit. If you are reading it,
+          the update pulled a new revision and rebuilt the view.
         </Text>
       </header>
 
