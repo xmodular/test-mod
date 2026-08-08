@@ -118,13 +118,13 @@ export function TerminalAgentsView() {
     >
       <header style={{ display: 'grid', gap: 4 }}>
         <Text as="small" font="overline" color="tertiary">
-          UPDATED FROM GIT · REVISION 4
+          UPDATED FROM GIT · REVISION 5
         </Text>
         <Text as="h2" font="h3" weight="semibold">
-          Task Runner (fourth revision)
+          Task Runner (fifth revision)
         </Text>
         <Text as="p" color="secondary">
-          Revision 4. Each update bumps this number, so the screen tells you
+          Revision 5. Each update bumps this number, so the screen tells you
           which commit the running view was built from.
         </Text>
       </header>
