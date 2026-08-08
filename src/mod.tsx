@@ -84,7 +84,7 @@ const listArtifacts = tool<'listArtifacts', ListArtifactsInput>({
 });
 
 const artifact = slashCommand({
-  id: 'artifact',
+  id: 'test-artifact',
   description: 'Publish an HTML artifact in this conversation',
   run: async (_argument, ctx) => {
     const [folder] = await ctx.workspace.getFolders();
@@ -202,7 +202,7 @@ async function reportToParent(
 }
 
 const branch = slashCommand({
-  id: 'branch',
+  id: 'test-branch',
   description: 'Branch this conversation from where it stands and open it',
   argumentHint: '<prompt>',
   run: async (argument, ctx) => {
@@ -220,13 +220,13 @@ const branch = slashCommand({
     await ctx.session.notify({
       attention: 'read',
       title: 'Branch created',
-      body: `Branched this conversation into session ${child.id} and opened it.${what} /end there reports back here.`,
+      body: `Branched this conversation into session ${child.id} and opened it.${what} /test-end there reports back here.`,
     });
   },
 });
 
 const end = slashCommand({
-  id: 'end',
+  id: 'test-end',
   description: 'End this branch and report back to the conversation it came from',
   argumentHint: '[report]',
   run: async (argument, ctx) => {
@@ -273,13 +273,13 @@ async function endWithSummary(
 }
 
 const task = slashCommand({
-  id: 'task',
+  id: 'test-task',
   description: 'Fork this conversation and run a task in the background',
   argumentHint: '<prompt>',
   run: async (argument, ctx) => {
     const prompt = argument?.trim();
     if (prompt === undefined || prompt.length === 0) {
-      return 'Usage: /task <prompt> — forks this conversation and runs the prompt in a child session.';
+      return 'Usage: /test-task <prompt> — forks this conversation and runs the prompt in a child session.';
     }
     void runTask(prompt, ctx);
   },
@@ -287,7 +287,7 @@ const task = slashCommand({
 
 const activation = effect({ id: 'xmodular.test-mod.activation' }, ctx => {
   ctx.logger.info(
-    'test-mod active; /task, /branch, /end and Terminal Agents registered'
+    'test-mod active; /test-task, /test-branch, /test-end and Terminal Agents registered'
   );
 });
 
